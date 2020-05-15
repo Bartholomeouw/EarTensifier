@@ -67,7 +67,7 @@ module.exports = class Ready extends Event {
 						.setFooter(`${totalMembers} users`);
 
 					this.client.shardMessage(this.client, this.client.channelList.readyChannel, embed);
-
+					require('../../utils/post/postStats.js')(this.client);
 					if (this.client.user.id != '472714545723342848') return;
 					postHandler(this.client, totalGuilds, this.client.shard.count, this.client.shard.id, totalMembers);
 					require('../../utils/dbl.js').startUp(this.client);
